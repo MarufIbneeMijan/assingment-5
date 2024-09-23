@@ -1,6 +1,6 @@
 // universal functions are in this page 
 function getButtonsById(id){
-  let buttonId =  document.getElementById(id)
+  let buttonId = document.getElementById(id)
     return buttonId
 }
 function getInputValueId(id){

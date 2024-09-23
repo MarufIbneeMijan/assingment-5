@@ -21,11 +21,12 @@
         }
       </style>
 </head>
-<body>
+<body id="body">
+  
    <!-- Header Section Start here  -->
-    <header class="mb-20 sticky top-0 z-10">
-        <section class="p-6 bg-[#F9F7F3] ">
-            <div class="navbar bg-base-100 lg:flex lg:flex-row flex flex-col justify-between lg:w-3/4 mx-auto bg-[#F9F7F3] ">
+    <header class="mb-20 sticky top-0 z-10 ">
+        <section class="">
+            <div class="navbar bg-base-100 lg:flex lg:flex-row flex flex-col justify-around bg-[#F9F7F3] p-6 ">
                 <div class="lg:navbar-start">
                     <div>
                         <button class="btn bg-green-300 px-8 py-3" id="blogButton">Blog</button>
@@ -38,24 +39,33 @@
                 <div class="lg:navbar-end lg:space-x-2">
                  
                     <img src="assets/coin.png" alt="coin">
-                    <p id="mainBalance">5500</p>
+                    <p id="mainBalance">10000</p>
                  
                 </div>
               </div>
+                <!-- main two buttons  -->
+          
+          
+          <div class="mb-7 mt-7 text-center">
+            <button class="btn bg-green-300" id="donationMainButton">Donation</button>
+            <button class="btn" id="history-button">History</button>
+        </div>
         </section>
+        
+        
+    
    </header>
     <!-- Header Section Start here Ends Here  -->
-     <!-- main section start here  -->
-     
-     <main>
-        <!-- main two buttons  -->
+    <!-- two buttons here   -->
+   
+<!-- main two buttons ends  -->
+   
+    
+    <!-- deafault page section  -->
+     <section class="" id="mainPageSection">
+      <main>
+         <!-- main section start here  -->
        
-       
-        <div class="mb-7 text-center">
-            <button class="btn bg-green-300">Donation</button>
-            <button class="btn">History</button>
-        </div>
- <!-- main two buttons ends  -->
         <section class="lg:mx-auto lg:w-3/4 gap-4">
 
         <!-- card-1  -->
@@ -160,11 +170,22 @@
     </main>
    
        <!-- main section end here  -->
-        <!-- footer start Here  -->
-         <div class="bg-[#F9F7F3] h-[100px] mt-8">
+       
+    </section>
+    <!-- history page start Here  -->
+     <section class="hidden" id="historyPage">
+      
+     </section>
+      
+    <!-- history page ends here  -->
+     <!-- footer start Here  -->
+     <footer>
+      <div class="bg-[#F9F7F3] h-[100px] mt-8">
 
-         </div>
-          <!-- footer end Here  -->
+      </div>
+     </footer>
+     
+      <!-- footer end Here  -->
 
      <!-- some scripts,That don't another freash js file -->
       <script>

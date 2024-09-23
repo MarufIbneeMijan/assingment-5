@@ -17,12 +17,13 @@
       <style>
         body{
             font-family:Lexend;
+            box-sizing: border-box;
         }
       </style>
 </head>
 <body>
    <!-- Header Section Start here  -->
-    <header class="mb-20">
+    <header class="mb-20 sticky top-0 z-10">
         <section class="p-6 bg-[#F9F7F3] ">
             <div class="navbar bg-base-100 lg:flex lg:flex-row flex flex-col justify-between lg:w-3/4 mx-auto bg-[#F9F7F3] ">
                 <div class="lg:navbar-start">
@@ -37,7 +38,7 @@
                 <div class="lg:navbar-end lg:space-x-2">
                  
                     <img src="assets/coin.png" alt="coin">
-                    <p>5500</p>
+                    <p id="mainBalance">5500</p>
                  
                 </div>
               </div>
@@ -48,6 +49,8 @@
      
      <main>
         <!-- main two buttons  -->
+       
+       
         <div class="mb-7 text-center">
             <button class="btn bg-green-300">Donation</button>
             <button class="btn">History</button>
@@ -56,48 +59,101 @@
         <section class="lg:mx-auto lg:w-3/4 gap-4">
 
         <!-- card-1  -->
-     <div class="card lg:card-side border-[#1111111a] border-2 p-6 mb-6 ">
+    
+       
+        <div class="card lg:card-side border-[#1111111a] border-2 p-6 mb-6 ">
+               <!-- modal is here   -->
+          <div class="text-center absolute 
+          top-[70%]
+          lg:top-[50%] lg:left-[40%] h-svh z-10 w-[100%] hidden" id="popUp">
+          <div class="modal-box">
+          <h3 class="text-lg font-bold">Congrates!</h3>
+          <img src="assets/coin.png" class="block mx-auto mb-2 mt-3" alt="">
+          <p class="py-4">You Hve Donated For HumanKind</p>
+          <p class="font-bold">Successfully</p>
+          <div class="modal-action">
+          
+       
+          <button class="btn" id="popUpCloseButton">Close</button>
+       
+      </div>
+    </div>
   
+           </div>
           <img class="w-[100%]"
             src="assets/noakhali.png"
             alt="noakhali" />
        
         <div class="card-body text-left">
-            <span class="p-4 bg-[#1111110D] w-2/4 rounded-[8px] text-center"><img class="inline" src="assets/coin.png">0 BDT</span>
+            <span class="p-4 bg-[#1111110D] w-2/4 rounded-[8px] text-center" ><img class="inline" src="assets/coin.png"> <p class="inline" id="donateAmountShow">500</p></span>
           <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
           <p> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-          <input type="number" class="border-[#1111111a] border-2 p-4 rounded-[8px]" placeholder="Write Donation Amount">
-          <button class="px-8 py-4 bg-[#B4F461] rounded-[8px] font-bold">Donate Now</button>
+          <input type="number" class="border-[#1111111a] border-2 p-4 rounded-[8px]" id="donationAmount1" placeholder="Write Donation Amount">
+          <button class="px-8 py-4 bg-[#B4F461] rounded-[8px] font-bold" id="donateNowButton1">Donate Now</button>
         </div>
       </div>
       <!-- card 2  -->
       <div class="card lg:card-side border-[#1111111a] border-2 p-6 mb-6  ">
-  
+         <!-- modal is here   -->
+         <div class="text-center absolute 
+         top-[70%]
+         lg:top-[20%] lg:left-[40%] h-svh z-10 w-[100%] hidden " id="popUp2">
+         <div class="modal-box">
+         <h3 class="text-lg font-bold">Congrates!</h3>
+         <img src="assets/coin.png" class="block mx-auto mb-2 mt-3" alt="">
+         <p class="py-4">You Hve Donated For HumanKind</p>
+         <p class="font-bold">Successfully</p>
+         <div class="modal-action">
+         
+      
+         <button class="btn" id="popUpCloseButton2">Close</button>
+      
+     </div>
+   </div>
+ 
+          </div>
         <img class="w-[100%]"
           src="assets/feni.png"
           alt="noakhali" />
      
       <div class="card-body text-left">
-          <span class="p-4 bg-[#1111110D] w-2/4 rounded-[8px] text-center"><img class="inline" src="assets/coin.png">0 BDT</span>
+          <span class="p-4 bg-[#1111110D] w-2/4 rounded-[8px] text-center"><img class="inline" src="assets/coin.png"><p class="inline" id="feniDonateAmountShow">0</p></span>
         <h2 class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
         <p> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-        <input type="number" class="border-[#1111111a] border-2 p-4 rounded-[8px]" placeholder="Write Donation Amount">
-        <button class="px-8 py-4 bg-[#B4F461] rounded-[8px] font-bold">Donate Now</button>
+        <input type="number" class="border-[#1111111a] border-2 p-4 rounded-[8px]" placeholder="Write Donation Amount" id="feniDonateAmountValue">
+        <button class="px-8 py-4 bg-[#B4F461] rounded-[8px] font-bold" id="feniDonateButton">Donate Now</button>
       </div>
     </div>
     <!-- card 3  -->
     <div class="card lg:card-side border-[#1111111a] border-2 p-6 mb-6  ">
+     <!-- modal is here  -->
+      <div class="text-center absolute 
+          top-[70%]
+          lg:top-[20%] lg:left-[40%] h-svh z-10 w-[100%] hidden " id="popUp3">
+          <div class="modal-box">
+          <h3 class="text-lg font-bold">Congrates!</h3>
+          <img src="assets/coin.png" class="block mx-auto mb-2 mt-3" alt="">
+          <p class="py-4">You Hve Donated For HumanKind</p>
+          <p class="font-bold">Successfully</p>
+          <div class="modal-action">
+          
+       
+          <button class="btn" id="popUpCloseButton3">Close</button>
+       
+      </div>
+    </div>
   
+           </div>
         <img class="w-[100%]"
           src="assets/quota-protest.png"
           alt="noakhali" />
      
       <div class="card-body text-left">
-          <span class="p-4 bg-[#1111110D] w-2/4 rounded-[8px] text-center"><img class="inline" src="assets/coin.png">0 BDT</span>
+          <span class="p-4 bg-[#1111110D] w-2/4 rounded-[8px] text-center"><img class="inline" src="assets/coin.png"><p class="inline" id="quataMovment DonationShow">0</p></span>
         <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
         <p> The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-        <input type="number" class="border-[#1111111a] border-2 p-4 rounded-[8px]" placeholder="Write Donation Amount">
-        <button class="px-8 py-4 bg-[#B4F461] rounded-[8px] font-bold">Donate Now</button>
+        <input type="number" class="border-[#1111111a] border-2 p-4 rounded-[8px]" placeholder="Write Donation Amount" id="quataMovmentDonationAmount">
+        <button class="px-8 py-4 bg-[#B4F461] rounded-[8px] font-bold" id="quataMovmentButton">Donate Now</button>
       </div>
     </div>
     </section>
@@ -117,6 +173,8 @@
         })
       </script>
 <!-- js files link  -->
- <script src="headerSection.js"></script>
+<script src="universalFunction.js"></script>
+<script src="features.js"></script>
+ 
 </body>
 </html>
